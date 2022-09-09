@@ -1,0 +1,39 @@
+header {
+  //   background: red;
+  color: white;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h2 {
+    // flex: 1;
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+  }
+  .inputs {
+    display: flex;
+    input[type="text"] {
+      color: rgb(20, 20, 20);
+      outline: none;
+      border: none;
+      background: rgb(148, 148, 148);
+      padding: 0.5rem 1rem;
+      border-radius: 5rem;
+      transition: 0.3s ease;
+    }
+    .search-btn {
+      &:hover {
+        background: rgb(107, 82, 36);
+      }
+    }
+    .create-btn {
+      background: rgba(198, 255, 198, 0.5);
+      color: black;
+      padding: 0.5rem 2rem;
+      &:hover {
+        color: rgb(0, 75, 0);
+        background: rgb(134, 248, 134);
+      }
+    }
+  }
+}

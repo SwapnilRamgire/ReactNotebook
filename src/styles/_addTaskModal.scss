@@ -1,0 +1,88 @@
+.addTaskModal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //   transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1rem);
+  .modal-cont {
+    width: 40vw;
+    height: 60vh;
+    background: rgb(16, 26, 20);
+    box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: space-around;
+    input[type="text"] {
+      color: rgb(20, 20, 20);
+      font-size: 1rem;
+      font-weight: 500;
+      outline: none;
+      border: none;
+      background: rgb(255, 255, 255);
+      padding: 0.5rem 1rem;
+      border-radius: 5rem;
+      transition: 0.3s ease;
+      margin-bottom: 1rem;
+    }
+    textarea {
+      flex: 1;
+      font-weight: 400;
+      padding: 1rem;
+      appearance: none;
+      outline: none;
+      border: none;
+      background: rgb(230, 230, 230);
+      border-radius: 1rem;
+      &::-webkit-scrollbar {
+        appearance: none;
+        width: 7px;
+      }
+      &::-webkit-scrollbar-track {
+        margin: 1rem 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgb(92, 92, 92);
+        border-radius: 5px;
+        border: 1px solid rgb(230, 230, 230);
+      }
+    }
+    .btn-cont {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 1rem 0 0 0;
+      .color-btn-cont {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        .color-btn {
+          height: 20px;
+          transition: 0.3s ease all;
+          &.active {
+            box-shadow: 0 0 0px 3px rgb(16, 26, 20),
+              0 0 0px 4px rgb(255, 255, 255);
+          }
+        }
+      }
+      align-self: flex-end;
+      .addTaskBtn {
+        padding: 0.5rem 1rem;
+        &:hover {
+          background: rgb(68, 255, 77);
+          color: rgb(32, 107, 35);
+        }
+      }
+    }
+  }
+}

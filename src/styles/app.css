@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  padding: 0 15rem;
+  background: #0f0f0f;
+  overflow: hidden;
+}
+
+button {
+  color: white;
+  font-weight: 400;
+  border-radius: 5rem;
+  border: none;
+  background: transparent;
+  padding: 0 1rem;
+  margin-left: 8px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.notes-cont {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  height: 75vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  position: relative;
+}
+
+.notes-cont::-webkit-scrollbar {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 7px;
+}
+
+.notes-cont::-webkit-scrollbar-thumb {
+  background-color: #5c5c5c;
+  border-radius: 5px;
+}
+
+.notes-cont .card {
+  padding: 1rem;
+  height: 20rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 5px 5px 15px black, inset 20px 20px 20px rgba(255, 255, 255, 0.3), inset -20px -20px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 15px black, inset 20px 20px 20px rgba(255, 255, 255, 0.3), inset -20px -20px 20px rgba(0, 0, 0, 0.3);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.notes-cont .card h1 {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notes-cont .card h4 {
+  font-weight: 300;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.notes-cont .card .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 1rem;
+}
+
+.notes-cont .card .card-footer button {
+  cursor: pointer;
+  padding: 5px 15px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.notes-cont .card .card-footer button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.notes-cont .card .card-footer p {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+header {
+  color: white;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header h2 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+}
+
+header .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .inputs input[type="text"] {
+  color: #141414;
+  outline: none;
+  border: none;
+  background: #949494;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header .inputs .search-btn:hover {
+  background: #6b5224;
+}
+
+header .inputs .create-btn {
+  background: rgba(198, 255, 198, 0.5);
+  color: black;
+  padding: 0.5rem 2rem;
+}
+
+header .inputs .create-btn:hover {
+  color: #004b00;
+  background: #86f886;
+}
+
+.addTaskModal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+.addTaskModal .modal-cont {
+  width: 40vw;
+  height: 60vh;
+  background: #101a14;
+  -webkit-box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.05);
+          box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addTaskModal .modal-cont input[type="text"] {
+  color: #141414;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.addTaskModal .modal-cont textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: 400;
+  padding: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background: #e6e6e6;
+  border-radius: 1rem;
+}
+
+.addTaskModal .modal-cont textarea::-webkit-scrollbar {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 7px;
+}
+
+.addTaskModal .modal-cont textarea::-webkit-scrollbar-track {
+  margin: 1rem 0;
+}
+
+.addTaskModal .modal-cont textarea::-webkit-scrollbar-thumb {
+  background-color: #5c5c5c;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+}
+
+.addTaskModal .modal-cont .btn-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin: 1rem 0 0 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.addTaskModal .modal-cont .btn-cont .color-btn-cont {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addTaskModal .modal-cont .btn-cont .color-btn-cont .color-btn {
+  height: 20px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.addTaskModal .modal-cont .btn-cont .color-btn-cont .color-btn.active {
+  -webkit-box-shadow: 0 0 0px 3px #101a14, 0 0 0px 4px white;
+          box-shadow: 0 0 0px 3px #101a14, 0 0 0px 4px white;
+}
+
+.addTaskModal .modal-cont .btn-cont .addTaskBtn {
+  padding: 0.5rem 1rem;
+}
+
+.addTaskModal .modal-cont .btn-cont .addTaskBtn:hover {
+  background: #44ff4d;
+  color: #206b23;
+}
+/*# sourceMappingURL=app.css.map */
